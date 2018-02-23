@@ -51,7 +51,7 @@ module.exports = function (gruntOrShipit) {
      */
 
     function createReleasePath() {
-      shipit.releaseDirname = moment.utc().format('YYYYMMDDHHmmss');
+      shipit.releaseDirname = moment.utc().format( shipit.config.releaseDirFmt || 'YYYYMMDDHHmmss');
       shipit.releasePath = path.join(shipit.releasesPath, shipit.releaseDirname);
 
       shipit.log('Create release path "%s"', shipit.releasePath);
